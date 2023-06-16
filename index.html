@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+      integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .tooltip {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+      }
+
+      .tooltip .tooltip-text {
+        visibility: hidden;
+        background-color: #000;
+        color: #fff;
+        text-align: center;
+        padding: 5px;
+        border-radius: 5px;
+        position: absolute;
+        z-index: 1;
+        bottom: 125%;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+
+      .tooltip:hover .tooltip-text {
+        visibility: visible;
+        opacity: 1;
+      }
+    </style>
+    <title>Password Generator</title>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Password Generator</h2>
+      <div class="result">
+        <input type="text" id="result" disabled />
+        <button class="btn">
+          <i class="far fa-clipboard"></i>
+        </button>
+      </div>
+      <div class="head_length">
+        <div class="length">
+          <label>Password Length</label>
+          <span id="number"></span>
+        </div>
+        <input type="range" min="8" max="24" value="8" />
+      </div>
+      <div class="settings">
+        <label class="title">Password Settings</label>
+        <ul class="options">
+          <li class="option">
+            <input type="checkbox" id="lowercase" checked />
+            <label
+              for="lowercase"
+              class="tooltip"
+              onclick="showTooltip('lowercase')"
+            >
+              Lowercase (a-z)
+            </label>
+          </li>
+          <li class="option">
+            <input type="checkbox" id="uppercase" />
+            <label for="uppercase">Uppercase (A-Z)</label>
+          </li>
+          <li class="option">
+            <input type="checkbox" id="number" />
+            <label for="number">Numbers (0-9)</label>
+          </li>
+          <li class="option">
+            <input type="checkbox" id="symbol" />
+            <label for="symbol">Symbols (!-$^+)</label>
+          </li>
+          <li class="option">
+            <input type="checkbox" id="exclude" />
+            <label for="exclude">Exclude Duplicate</label>
+          </li>
+          <li class="option">
+            <input type="checkbox" id="include" />
+            <label for="include">Include Spaces</label>
+          </li>
+        </ul>
+      </div>
+      <button class="btn btn-large">Generate Password</button>
+    </div>
+    <div class="error">
+      <span class="error-message">Password Copied</span>
+    </div>
+    <script src="script.js" defer></script>
+  </body>
+</html>
