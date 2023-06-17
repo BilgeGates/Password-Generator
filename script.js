@@ -58,7 +58,8 @@ const copyPassword = () => {
     navigator.clipboard.writeText(passwordResult.value);
     const errorDiv = document.querySelector(".error");
     errorDiv.style.display = "block";
-
+    errorDiv.textContent = "Password copied!";
+    errorDiv.style.background = "";
     copyIcon.innerHTML = '<i class="fas fa-check"></i>';
 
     setTimeout(() => {
@@ -67,9 +68,9 @@ const copyPassword = () => {
     }, 2000);
   } else {
     const errorDiv = document.querySelector(".error");
-    errorDiv.innerHTML = "No password to copy!";
+    errorDiv.textContent = "No password to copy!";
     errorDiv.style.display = "block";
-    errorDiv.style.background = "#ff4b4b";
+    errorDiv.style.background = "red";
     setTimeout(() => {
       errorDiv.style.display = "none";
     }, 2000);
