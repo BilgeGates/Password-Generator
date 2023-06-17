@@ -19,18 +19,6 @@ body {
   animation: gradientAnimation 10s infinite;
 }
 
-@keyframes gradientAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
 ul {
   list-style: none;
 }
@@ -51,18 +39,6 @@ input {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   background-size: 400% 400%;
   animation: gradientAnimation 10s ease infinite;
-}
-
-@keyframes gradientAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
 }
 
 .container h2 {
@@ -200,33 +176,9 @@ input {
   animation: error 2s ease-in;
 }
 
-@keyframes error {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
 .error-message {
   font-weight: bold;
   animation: blink 2s infinite;
-}
-
-@keyframes blink {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 1;
-  }
 }
 
 .alert-message {
@@ -242,16 +194,4 @@ input {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   opacity: 0;
   animation: fadeOut 2s ease-in;
-}
-
-@keyframes fadeOut {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 1;
-  }
 }
