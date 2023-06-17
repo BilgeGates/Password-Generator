@@ -69,7 +69,7 @@ const copyPassword = () => {
     const errorDiv = document.querySelector(".error");
     errorDiv.innerHTML = "No password to copy!";
     errorDiv.style.display = "block";
-
+    errorDiv.style.background = "#ff4b4b";
     setTimeout(() => {
       errorDiv.style.display = "none";
     }, 2000);
@@ -80,7 +80,7 @@ lowercaseCheckbox.addEventListener("click", () => {
   if (!lowercaseCheckbox.checked) {
     const alertMessage = document.createElement("div");
     alertMessage.classList.add("alert-message");
-    alertMessage.textContent = "Lowercase option cannot be unchecked";
+    alertMessage.textContent = "Lowercase option cannot be unchecked!";
 
     document.body.appendChild(alertMessage);
 
